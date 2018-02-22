@@ -25,12 +25,12 @@
  */
 package com.flowpowered.noise.module.modifier;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.flowpowered.noise.Utils;
 import com.flowpowered.noise.exception.NoModuleException;
 import com.flowpowered.noise.module.Module;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Curve extends Module {
     private final List<ControlPoint> controlPoints = new ArrayList<>();

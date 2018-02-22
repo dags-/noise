@@ -30,7 +30,7 @@ import com.flowpowered.noise.NoiseQuality;
 import com.flowpowered.noise.Utils;
 import com.flowpowered.noise.module.Module;
 
-public class Billow extends Module {
+public class Billow extends Module implements Gradient {
     public static final double DEFAULT_BILLOW_FREQUENCY = 1.0;
     public static final double DEFAULT_BILLOW_LACUNARITY = 2.0;
     public static final int DEFAULT_BILLOW_OCTAVE_COUNT = 6;
@@ -49,10 +49,12 @@ public class Billow extends Module {
         super(0);
     }
 
+    @Override
     public int getOctaveCount() {
         return octaveCount;
     }
 
+    @Override
     public void setOctaveCount(int octaveCount) {
         if (octaveCount < 1 || octaveCount > BILLOW_MAX_OCTAVE) {
             throw new IllegalArgumentException("octaveCount must be between 1 and BILLOW_MAX_OCTAVE: " + BILLOW_MAX_OCTAVE);
@@ -60,18 +62,22 @@ public class Billow extends Module {
         this.octaveCount = octaveCount;
     }
 
+    @Override
     public double getFrequency() {
         return frequency;
     }
 
+    @Override
     public void setFrequency(double frequency) {
         this.frequency = frequency;
     }
 
+    @Override
     public double getLacunarity() {
         return lacunarity;
     }
 
+    @Override
     public void setLacunarity(double lacunarity) {
         this.lacunarity = lacunarity;
     }
@@ -92,10 +98,12 @@ public class Billow extends Module {
         this.persistence = persistence;
     }
 
+    @Override
     public int getSeed() {
         return seed;
     }
 
+    @Override
     public void setSeed(int seed) {
         this.seed = seed;
     }

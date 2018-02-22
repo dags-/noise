@@ -30,7 +30,7 @@ import com.flowpowered.noise.NoiseQuality;
 import com.flowpowered.noise.Utils;
 import com.flowpowered.noise.module.Module;
 
-public class Perlin extends Module {
+public class Perlin extends Module implements Gradient {
     // Default frequency for the noise::module::Perlin noise module.
     public static final double DEFAULT_PERLIN_FREQUENCY = 1.0;
     // Default lacunarity for the noise::module::Perlin noise module.
@@ -62,18 +62,22 @@ public class Perlin extends Module {
         super(0);
     }
 
+    @Override
     public double getFrequency() {
         return frequency;
     }
 
+    @Override
     public void setFrequency(double frequency) {
         this.frequency = frequency;
     }
 
+    @Override
     public double getLacunarity() {
         return lacunarity;
     }
 
+    @Override
     public void setLacunarity(double lacunarity) {
         this.lacunarity = lacunarity;
     }
@@ -86,10 +90,12 @@ public class Perlin extends Module {
         this.noiseQuality = noiseQuality;
     }
 
+    @Override
     public int getOctaveCount() {
         return octaveCount;
     }
 
+    @Override
     public void setOctaveCount(int octaveCount) {
         if (octaveCount < 1 || octaveCount > PERLIN_MAX_OCTAVE) {
             throw new IllegalArgumentException("octaveCount must be between 1 and MAX OCTAVE: " + PERLIN_MAX_OCTAVE);
@@ -106,10 +112,12 @@ public class Perlin extends Module {
         this.persistence = persistence;
     }
 
+    @Override
     public int getSeed() {
         return seed;
     }
 
+    @Override
     public void setSeed(int seed) {
         this.seed = seed;
     }

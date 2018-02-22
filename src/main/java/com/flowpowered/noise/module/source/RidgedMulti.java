@@ -30,7 +30,7 @@ import com.flowpowered.noise.NoiseQuality;
 import com.flowpowered.noise.Utils;
 import com.flowpowered.noise.module.Module;
 
-public class RidgedMulti extends Module {
+public class RidgedMulti extends Module implements Gradient {
     // Default frequency for the noise::module::RidgedMulti noise module.
     public static final double DEFAULT_RIDGED_FREQUENCY = 1.0;
     // Default lacunarity for the noise::module::RidgedMulti noise module.
@@ -60,18 +60,22 @@ public class RidgedMulti extends Module {
         calcSpectralWeights();
     }
 
+    @Override
     public double getFrequency() {
         return frequency;
     }
 
+    @Override
     public void setFrequency(double frequency) {
         this.frequency = frequency;
     }
 
+    @Override
     public double getLacunarity() {
         return lacunarity;
     }
 
+    @Override
     public void setLacunarity(double lacunarity) {
         this.lacunarity = lacunarity;
     }
@@ -84,18 +88,22 @@ public class RidgedMulti extends Module {
         this.noiseQuality = noiseQuality;
     }
 
+    @Override
     public int getOctaveCount() {
         return octaveCount;
     }
 
+    @Override
     public void setOctaveCount(int octaveCount) {
         this.octaveCount = Math.min(octaveCount, RIDGED_MAX_OCTAVE);
     }
 
+    @Override
     public int getSeed() {
         return seed;
     }
 
+    @Override
     public void setSeed(int seed) {
         this.seed = seed;
     }

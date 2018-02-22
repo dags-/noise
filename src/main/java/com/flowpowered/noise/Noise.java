@@ -151,7 +151,7 @@ public final class Noise {
         // Now compute the dot product of the gradient vector with the distance
         // vector.  The resulting value is gradient noise.  Apply a scaling value
         // so that this noise value ranges from -1.0 to 1.0.
-        return ((xvGradient * xvPoint) + (yvGradient * yvPoint) + (zvGradient * zvPoint)) * 2.12;
+        return ((xvGradient * xvPoint) + (yvGradient * yvPoint) + (zvGradient * zvPoint)); // * 2.12;
     }
 
     /**

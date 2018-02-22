@@ -26,8 +26,9 @@
 package com.flowpowered.noise.module;
 
 import com.flowpowered.noise.exception.NoModuleException;
+import com.flowpowered.noise.module.source.Source;
 
-public abstract class Module {
+public abstract class Module implements Source {
     protected Module[] sourceModule;
 
     public Module(int sourceModuleCount) {
